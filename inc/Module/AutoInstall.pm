@@ -151,6 +151,7 @@ sub import {
         print "[" . ( $FeatureMap{ lc($feature) } || $feature ) . "]\n";
 
         $modules = [ %{$modules} ] if UNIVERSAL::isa( $modules, 'HASH' );
+        $modules = [ @{$modules} ]; # Copy to keep original
 
         unshift @$modules, -default => &{ shift(@$modules) }
           if ( ref( $modules->[0] ) eq 'CODE' );    # XXX: bugward combatability
@@ -802,4 +803,4 @@ END_MAKE
 
 __END__
 
-#line 1056
+#line 1057

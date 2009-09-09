@@ -5,6 +5,7 @@ author:
 build_requires:
   ExtUtils::MakeMaker: 6.42
   Test::More: 0
+  Test::NoWarnings: 0
   lib::abs: 0.90
 configure_requires:
   ExtUtils::MakeMaker: 6.42
@@ -17,12 +18,16 @@ meta-spec:
 name: Acme-CPANAuthors-AnyEvent
 no_index:
   directory:
-    - example
     - inc
     - t
+provides:
+  Acme::CPANAuthors::AnyEvent:
+    file: lib/Acme/CPANAuthors/AnyEvent.pm
+    version: 0.03
 requires:
   Acme::CPANAuthors: 0
   Acme::CPANAuthors::Register: 0
+  perl: 5.005
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.02
+version: 0.03
